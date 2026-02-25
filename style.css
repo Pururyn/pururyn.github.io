@@ -19,33 +19,57 @@ body {
     padding-top: 60px;
 }
 
-    /* La tige de GAUCHE (Tige 1) */
-    body::before {
-        content: "";
-        position: absolute;
-        top: 50px;
-        bottom:-960px;
-        left: 50px;
-        width: 60px;
-        z-index: -1;
-        background-image: url('Images/plante-tige.png'), url('Images/plante-tige2.png');
-        background-repeat: repeat-y;
-        background-size: contain;
-    }
-
-    /* La tige de DROITE (Tige 2) */
-    body::after {
+    /* --- BASE (Desktop) --- */
+    body::before, body::after {
         content: "";
         position: absolute;
         top: 50px;
         bottom: -960px;
-        right: 50px;
-        width: 60px;
+        width: 60px; /* Taille normale sur PC */
         z-index: -1;
         background-image: url('Images/plante-tige.png'), url('Images/plante-tige2.png');
         background-repeat: repeat-y;
         background-size: contain;
+        transition: all 0.3s ease; /* Pour une transition fluide si on redimensionne */
     }
+
+    body::before {
+        left: 50px;
+    }
+
+    body::after {
+        right: 50px;
+    }
+
+    /* --- AJUSTEMENTS MOBILE (Écrans < 768px) --- */
+@media (max-width: 768px) {
+    body::before, body::after {
+        width: 40px;   /* On réduit la largeur des feuilles */
+        top: 20px;     /* On les remonte un peu */
+    }
+    
+    body::before { 
+        left: 5px;     /* On les colle presque au bord gauche */
+    }
+    
+    body::after { 
+        right: 5px;    /* On les colle presque au bord droit */
+    }
+
+    /* On s'assure que le contenu au milieu laisse de la place */
+    main, .container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* --- OPTIONNEL : TRÈS PETITS ÉCRANS (< 480px) --- */
+@media (max-width: 480px) {
+    body::before, body::after {
+        width: 25px;   /* Encore plus fin sur iPhone */
+        opacity: 0.5;  /* On les rend plus discrètes pour ne pas gêner la lecture */
+    }
+}
 
 /* Navigation Responsive */
 nav {
