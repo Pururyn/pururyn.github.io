@@ -1,0 +1,13 @@
+# --- Visual Studio Junk ---
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+.vs
+
+# --- Windows Junk ---
+Thumbs.db
+desktop.ini
+
+# --- Divers ---
+*.log
