@@ -104,6 +104,8 @@ nav a {
         color: var(--text-main);
     }
 
+/* --- Bouton scroll --- */
+
 .scroll-indicator {
     position: absolute;
     bottom: 40px;
@@ -125,6 +127,34 @@ nav a {
         animation: bounce 2s infinite;
     }
 
+/* --- BOUTON TÉLÉCHARGEMENT --- */
+.download-container {
+    margin-top: 30px;
+    text-align: center; /* Centre le bouton dans la section bio */
+}
+
+.btn-download {
+    display: inline-block;
+    background-color: #8b9356; /* Le même vert que ta flèche et ton header */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+    .btn-download:hover {
+        background-color: var(--accent); /* Change vers ton orange au survol */
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-download span {
+        margin-right: 8px;
+    }
 /* --- CONTENU ET FEUILLAGES --- */
 .content-wrapper {
     position: relative;
