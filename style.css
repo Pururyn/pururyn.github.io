@@ -272,11 +272,14 @@ nav a {
     position: relative;
     z-index: 2;
 }
+/* On force TOUTES les sections à être des points d'arrêt, y compris l'accueil */
+section, .hero {
+    scroll-snap-align: start; /* La section se cale au début de l'écran */
+    scroll-snap-stop: always; /* Force l'arrêt même si on scroll fort */
+}
 
 section {
     padding: 60px 0;
-    scroll-snap-align: start; /* La section se cale au début de l'écran */
-    scroll-snap-stop: always; /* Force l'arrêt même si on scroll fort */
 }
 
 /* PROJETS */
