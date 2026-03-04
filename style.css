@@ -41,14 +41,29 @@ nav {
     }
 
 .nav-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 15px;
+    width: 100%;
+    padding: 10px 40px; /* 40px de marge avec le bord gauche/droit */
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    align-items: center;
+    justify-content: space-between; /* Pousse l'accueil à gauche, le reste à droite */
+    box-sizing: border-box;
 }
 
+/* On force les liens à rester au centre absolu de la barre de nav */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-logo {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: bold;
+    z-index: 2; /* Pour rester cliquable au-dessus du positionnement absolute */
+}
 nav a {
     text-decoration: none;
     color: var(--text-main);
