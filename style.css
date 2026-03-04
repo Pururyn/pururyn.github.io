@@ -39,7 +39,17 @@ nav {
     nav.visible {
         top: 0;
     }
+/* Style pour l'image du logo */
+.logo-img {
+    height: 60px; /* Ajuste la hauteur selon tes goûts */
+    width: auto; /* Garde les proportions */
+    display: block;
+    transition: transform 0.3s ease;
+}
 
+    .logo-img:hover {
+        transform: scale(1.1); /* Petit effet au survol */
+    }
 .nav-container {
     width: 100%;
     padding: 10px 40px; /* 40px de marge avec le bord gauche/droit */
@@ -437,6 +447,28 @@ footer {
 @media (max-width: 768px) {
     .main-container {
         padding: 40px 20px;
+    }
+    /* 1. On cache les liens de navigation */
+    .nav-links {
+        display: none;
+    }
+
+    /* 2. On centre le logo */
+    .nav-container {
+        justify-content: center; /* Centre le contenu horizontalement */
+        padding: 5px 0;
+    }
+
+    /* 3. On annule le positionnement absolu si tu l'avais mis */
+    .nav-logo {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+    }
+
+    /* Optionnel : agrandir un peu le logo sur mobile pour la lisibilité */
+    .logo-img {
+        height: 55px;
     }
 
     .content-wrapper::before, .content-wrapper::after {
