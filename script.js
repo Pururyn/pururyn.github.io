@@ -1,4 +1,4 @@
-let isAnimating = false;
+﻿let isAnimating = false;
 
 // 1. GESTION DU HEADER ET BOUTON RETOUR
 window.addEventListener('scroll', () => {
@@ -14,14 +14,14 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 2. LOGIQUE DE SCROLL �CRAN PAR �CRAN (D�TECTION DYNAMIQUE)
+// 2. LOGIQUE DE SCROLL ÉCRAN PAR ÉCRAN (DÉTECTION DYNAMIQUE)
 window.addEventListener('wheel', (e) => {
     if (isAnimating) return;
 
-    // On r�cup�re toutes les sections + le footer
+    // On récupère toutes les sections + le footer
     const targets = [...document.querySelectorAll('section'), document.querySelector('footer')];
 
-    // On trouve quelle section est actuellement la plus visible � l'�cran
+    // On trouve quelle section est actuellement la plus visible à l'écran
     const currentScroll = window.scrollY;
     let currentIndex = 0;
     let minDistance = Math.abs(currentScroll - targets[0].offsetTop);
@@ -34,14 +34,14 @@ window.addEventListener('wheel', (e) => {
         }
     });
 
-    // On d�cide de la direction
+    // On décide de la direction
     if (e.deltaY > 0) {
-        // Scroll vers le bas -> on va � la section suivante
+        // Scroll vers le bas -> on va à la section suivante
         if (currentIndex < targets.length - 1) {
             scrollToTarget(targets[currentIndex + 1].offsetTop);
         }
     } else {
-        // Scroll vers le haut -> on va � la section pr�c�dente
+        // Scroll vers le haut -> on va à la section précédente
         if (currentIndex > 0) {
             scrollToTarget(targets[currentIndex - 1].offsetTop);
         }
@@ -56,7 +56,7 @@ function scrollToTarget(yPosition) {
         behavior: 'smooth'
     });
 
-    // On r�duit un peu le d�lai (600ms au lieu de 800ms) pour plus de nervosit�
+    // On réduit un peu le délai (600ms au lieu de 800ms) pour plus de nervosité
     setTimeout(() => {
         isAnimating = false;
     }, 600);
@@ -76,3 +76,63 @@ if (nextBtn && prevBtn) {
         grid.scrollLeft -= grid.offsetWidth;
     });
 }
+
+const langBtn = document.getElementById('lang-switch');
+const langFlag = document.getElementById('lang-flag');
+
+const translations = {
+    fr: {
+        bio: "Bio",
+        projets: "Projets",
+        contact: "Contact",
+        welcome: "Bienvenue sur mon portfolio, prenez un café/thé et bonne visite ! ☕",
+        tagline: "Développeuse de jeux vidéo & amoureuse des capybaras.💕",
+        whoAmI: "Qui suis-je ?",
+        bioText: "Passionnée par la création d'univers, je développe des jeux qui allient mécanique solide et ambiance relaxante...",
+        btnHuman: "🤹 CV Version Humain",
+        btnAts: "🤖 CV Version ATS",
+        myProjects: "Mes Projets",
+        moreProjects: "Voir + de projets",
+        contactTitle: "Mon profil vous plaît? Contactez-moi !",
+        contactDesc: "Veuillez sélectionner le moyen de contact souhaité, à très vite! ☺️"
+    },
+    en: {
+        bio: "Bio",
+        projets: "Projects",
+        contact: "Contact",
+        welcome: "Welcome to my portfolio, grab a coffee/tea and enjoy your visit! ☕",
+        tagline: "Game Developer & Capybara lover.💕",
+        whoAmI: "Who am I?",
+        bioText: "Passionate about world-building, I develop games that combine solid mechanics with a relaxing atmosphere...",
+        btnHuman: "🤹 Human Version CV",
+        btnAts: "🤖 ATS Version CV",
+        myProjects: "My Projects",
+        moreProjects: "More projects",
+        contactTitle: "Like my profile? Let's talk!",
+        contactDesc: "Please select your preferred contact method, see you soon! ☺️"
+    }
+};
+
+langBtn.addEventListener('click', () => {
+    const currentLang = langBtn.getAttribute('data-lang');
+    const newLang = currentLang === 'fr' ? 'en' : 'fr';
+
+    // Mise à jour de l'icône (Assure-toi d'avoir flag-en.png et flag-fr.png)
+    langFlag.src = newLang === 'fr' ? 'Images/French.png' : 'Images/English.png';
+    langBtn.setAttribute('data-lang', newLang);
+
+    // Traduction des éléments (Ajoute les IDs correspondants dans ton HTML)
+    document.querySelector('a[href="#qui-suis-je"]').textContent = translations[newLang].bio;
+    document.querySelector('a[href="#projets"]').textContent = translations[newLang].projets;
+    document.querySelector('a[href="#contact"]').textContent = translations[newLang].contact;
+    document.querySelector('.hero-content h1').textContent = translations[newLang].welcome;
+    document.querySelector('.tagline').textContent = translations[newLang].tagline;
+    document.querySelector('#qui-suis-je h2').textContent = translations[newLang].whoAmI;
+    document.querySelector('.bio-text p').textContent = translations[newLang].bioText;
+    document.querySelector('.btn-download:first-child').childNodes[0].textContent = translations[newLang].btnHuman;
+    document.querySelector('.btn-ats').childNodes[0].textContent = translations[newLang].btnAts;
+    document.querySelector('#projets h2').textContent = translations[newLang].myProjects;
+    document.querySelector('.more-projects .btn-download:not(.btn-ats)').lastChild.textContent = translations[newLang].moreProjects;
+    document.querySelector('.contact-card h2').textContent = translations[newLang].contactTitle;
+    document.querySelector('.contact-card p').textContent = translations[newLang].contactDesc;
+});
