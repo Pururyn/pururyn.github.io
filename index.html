@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <button id="lang-switch" class="lang-btn" data-lang="fr">
+        <img src="Images/Languages/French.png" id="lang-flag" alt="Changer la langue">
+    </button>
     <nav id="main-nav">
         <div class="nav-container">
             <a href="#accueil" class="nav-logo">
@@ -20,9 +23,7 @@
                 <a href="#contact" data-i18n="nav_contact">Contact</a>
             </div>
         </div>
-        <button id="lang-switch" class="lang-btn" data-lang="fr">
-            <img src="Images/Languages/French.png" id="lang-flag" alt="Changer la langue">
-        </button>
+
     </nav>
 
     <section id="accueil" class="hero">
@@ -135,11 +136,12 @@
     </div>
 
     <footer>
+        <a href="#accueil" class="back-to-top" aria-label="Remonter">↑</a>
         <div class="footer-container">
             <p data-i18n="footer_text">© 2026 Jacqueline | Fait avec ❤️ et beaucoup de Capybaras 🌿</p>
         </div>
     </footer>
-    <a href="#accueil" class="back-to-top" aria-label="Remonter">↑</a>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -379,19 +379,22 @@ section {
     margin-top: 20px;
 }
 
+/* On ajoute un conteneur relatif pour le footer pour que le bouton s'y accroche */
 footer {
+    position: relative;
     background: #c3d2a0;
     padding: 20px 0;
     text-align: center;
     width: 100%;
     scroll-snap-align: end;
-    /* On le laisse se placer naturellement après la section contact */
 }
 
+/* --- BOUTON RETOUR EN HAUT --- */
 .back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+    position: absolute; /* Change de fixed à absolute */
+    bottom: 100%; /* Se place juste au-dessus du bord haut du footer */
+    right: 75px;
+    margin-bottom: 20px; /* Espace entre le bouton et le footer */
     background: #8b9356;
     color: white;
     width: 50px;
@@ -561,5 +564,11 @@ footer {
         right: 15px;
         width: 40px;
         height: 40px;
+    }
+    .back-to-top {
+        right: 20px; /* Un peu plus près du bord sur mobile */
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
     }
 }

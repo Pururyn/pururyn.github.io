@@ -1,5 +1,9 @@
 ﻿let isAnimating = false;
 
+<script>
+    window.location.replace("https://pururyn.github.io/Capyfolio/");
+</script>
+
 // 1. GESTION DU HEADER ET BOUTON RETOUR
 window.addEventListener('scroll', () => {
     const backToTopButton = document.querySelector('.back-to-top');
