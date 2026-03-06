@@ -15,9 +15,9 @@
             </a>
 
             <div class="nav-links">
-                <a href="#qui-suis-je">Bio</a>
-                <a href="#projets">Projets</a>
-                <a href="#contact">Contact</a>
+                <a href="#qui-suis-je" data-i18n="nav_bio">Bio</a>
+                <a href="#projets" data-i18n="nav_projects">Projets</a>
+                <a href="#contact" data-i18n="nav_contact">Contact</a>
             </div>
         </div>
         <button id="lang-switch" class="lang-btn" data-lang="fr">
@@ -25,122 +25,121 @@
         </button>
     </nav>
 
-<section id="accueil" class="hero">
-    <div class="hero-full-banner">
-        <img src="Images/Website_DA/CapyGaming.png" alt="Capybara Dev" class="hero-image">
-        <div class="hero-content">
-            <h1>Bienvenue sur mon portfolio, prenez un café/thé et bonne visite ! ☕</h1>
-
-            <p class="tagline">Développeuse de jeux vidéo & amoureuse des capybaras.💕</p>
+    <section id="accueil" class="hero">
+        <div class="hero-full-banner">
+            <img src="Images/Website_DA/CapyGaming.png" alt="Capybara Dev" class="hero-image">
+            <div class="hero-content">
+                <h1 data-i18n="hero_welcome">Bienvenue sur mon portfolio, prenez un café/thé et bonne visite ! ☕</h1>
+                <p class="tagline" data-i18n="hero_tagline">Développeuse de jeux vidéo & amoureuse des capybaras.💕</p>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#qui-suis-je">↓</a>
+            </div>
         </div>
-        <div class="scroll-indicator">
-            <a href="#qui-suis-je">↓</a>
+    </section>
+
+    <div class="content-wrapper">
+        <div class="main-container">
+            <section id="qui-suis-je">
+                <div class="title-with-mascot">
+                    <img src="Images/Website_DA/CapyQuestion.png" alt="Capy se pose une question" class="mini-capy">
+                    <h2 data-i18n="bio_title">Qui suis-je ?</h2>
+                </div>
+
+                <div class="bio-text">
+                    <p data-i18n="bio_text">Passionnée par la création d'univers, je développe des jeux qui allient mécanique solide et ambiance relaxante...</p>
+                    <p><strong>Stack technique :</strong> Unity (C#), Unreal (Blueprint), Web (Front end).</p>
+
+                    <div class="download-options">
+                        <a href="CV/CV_Jacqueline_HUYNH.pdf" download class="btn-download" data-i18n="btn_human">
+                            🤹 CV Version Humain
+                        </a>
+                        <a href="CV/CV_ATS_Jacqueline_HUYNH.pdf" download class="btn-download btn-ats" data-i18n="btn_ats">
+                            🤖 CV Version ATS
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projets">
+                <div class="title-with-mascot">
+                    <img src="Images/Website_DA/CapyPC.png" alt="Capy au travail" class="mini-capy">
+                    <h2 data-i18n="projects_title">Mes Projets</h2>
+                </div>
+
+                <div class="slider-wrapper">
+                    <button class="slider-arrow prev" aria-label="Précédent">❮</button>
+
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <div class="project-placeholder">
+                                <img src="Images/Projects/Cyberdrift.png" class="active" alt="Cyberdrift">
+                                <img src="Images/Projects/Cyberdrift_Game.png" alt="Cyberdrift Game">
+                            </div>
+                            <div class="project-info">
+                                <h3>Cyberdrift</h3>
+                                <p data-i18n="desc_cyber">Un Shoot-em Up dans un environnement cyberpunk à l'occasion d'une exposition au musée Malartre.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-placeholder">
+                                <img src="Images/Projects/WhiskersNWings.png" class="active" alt="WhiskersNWings">
+                                <img src="Images/Projects/WhiskersNWingsEgypt.png" alt="Ancient Egypt">
+                                <img src="Images/Projects/WhiskersNWingsMiddleAge.png" alt="Middle Age">
+                            </div>
+                            <div class="project-info">
+                                <h3>WhiskersNWings</h3>
+                                <p data-i18n="desc_whiskers">Un platformer en co-op où le joueur voyagera dans le temps où collaboration est requise.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-placeholder">🖼️ Testeur</div>
+                            <div class="project-info">
+                                <h3 data-i18n="title_testeur">Testeur</h3>
+                                <p data-i18n="desc_testeur">Test de l'affichage du 3eme jeu</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="slider-arrow next" aria-label="Suivant">❯</button>
+                </div>
+
+                <div class="more-projects">
+                    <a href="https://pururyn.itch.io/" target="_blank" class="btn-download" data-i18n="btn_more_itch">
+                        <img src="Images/Logos/itch-io.png" class="btn-icon" alt=""> Voir + de projets
+                    </a>
+                    <a href="https://github.com/Pururyn" target="_blank" class="btn-download btn-ats">
+                        <img src="Images/Logos/github.png" class="btn-icon" alt=""> Github
+                    </a>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="contact-card">
+                    <h2 data-i18n="contact_title">Mon profil vous plaît? Contactez-moi !</h2>
+                    <p data-i18n="contact_desc">Veuillez sélectionner le moyen de contact souhaité, à très vite! ☺️</p>
+
+                    <div class="contact-buttons">
+                        <a href="mailto:jacqueline@outlook.fr" class="btn">
+                            <img src="Images/Logos/mail.png" class="btn-icon" alt=""> Mon E-mail
+                        </a>
+                        <a href="https://www.linkedin.com/in/jhuynh0802" target="_blank" class="btn btn-linkedin">
+                            <img src="Images/Logos/linkedin.png" class="btn-icon" alt=""> Mon LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-</section>
 
-<div class="content-wrapper">
-    <div class="main-container">
-        <section id="qui-suis-je">
-            <div class="title-with-mascot">
-                <img src="Images/Website_DA/CapyQuestion.png" alt="Capy se pose une question" class="mini-capy">
-                <h2>Qui suis-je ?</h2>
-            </div>
-
-            <div class="bio-text">
-                <p>Passionnée par la création d'univers, je développe des jeux qui allient mécanique solide et ambiance relaxante...</p>
-                <p><strong>Stack technique :</strong> Unity (C#), Unreal (Blueprint), Web (Front end).</p>
-
-                <div class="download-options">
-                    <a href="CV/CV_Jacqueline_HUYNH.pdf" download class="btn-download">
-                        🤹 CV Version Humain
-                    </a>
-                    <a href="CV/CV_ATS_Jacqueline_HUYNH.pdf" download class="btn-download btn-ats">
-                        🤖 CV Version ATS
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="projets">
-            <div class="title-with-mascot">
-                <img src="Images/Website_DA/CapyPC.png" alt="Capy au travail" class="mini-capy">
-                <h2>Mes Projets</h2>
-            </div>
-
-            <div class="slider-wrapper">
-                <button class="slider-arrow prev" aria-label="Précédent">❮</button>
-
-                <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-placeholder">
-                            <img src="Images/Projects/Cyberdrift.png" class="active" alt="Title">
-                            <img src="Images/Projects/Cyberdrift_game.png" alt="Game">
-                        </div>
-                        <div class="project-info">
-                            <h3>Cyberdrift</h3>
-                            <p>Un Shoot-em Up dans un environnement cyberpunk à l'occasion d'une exposition au musée Malartre.</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-placeholder">
-                            <img src="Images/Projects/WhiskersNWings.png" class="active" alt="Title">
-                            <img src="Images/Projects/WhiskersNWingsEgypt.png" alt="1stLvl">
-                            <img src="Images/Projects/WhiskersNWingsMiddleAge.png" alt="2ndLvl">>
-                        </div>
-                        <div class="project-info">
-                            <h3>WhiskersNWings</h3>
-                            <p>Un platformer en co-op où le joueur voyagera dans le temps où collaboration est requise.</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-placeholder">🖼️ Testeur</div>
-                        <div class="project-info">
-                            <h3>Testeur</h3>
-                            <p>Test de l'affichage du 3eme jeu</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="slider-arrow next" aria-label="Suivant">❯</button>
-            </div>
-
-            <div class="more-projects">
-                <a href="https://pururyn.itch.io/" target="_blank" class="btn-download">
-                    <img src="Images/Logos/itch-io.png" class="btn-icon" alt=""> Voir + de projets
-                </a>
-                <a href="https://github.com/Pururyn" target="_blank" class="btn-download btn-ats">
-                    <img src="Images/Logos/github.png" class="btn-icon" alt=""> Github
-                </a>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="contact-card">
-                <h2>Mon profil vous plaît? Contactez-moi !</h2>
-                <p>Veuillez sélectionner le moyen de contact souhaité, à très vite! ☺️</p>
-
-                <div class="contact-buttons">
-                    <a href="mailto:jacqueline@outlook.fr" class="btn">
-                        <img src="Images/Logos/mail.png" class="btn-icon" alt=""> Mon E-mail
-                    </a>
-                    <a href="https://www.linkedin.com/in/jhuynh0802" target="_blank" class="btn btn-linkedin">
-                        <img src="Images/Logos/linkedin.png" class="btn-icon" alt=""> Mon LinkedIn
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-
-<footer>
-    <div class="footer-container">
-        <p>© 2026 Jacqueline | Fait avec ❤️ et beaucoup de Capybaras 🌿</p>
-    </div>
-</footer>
-<a href="#accueil" class="back-to-top" aria-label="Remonter">↑</a>
-<script src="script.js"></script>
+    <footer>
+        <div class="footer-container">
+            <p data-i18n="footer_text">© 2026 Jacqueline | Fait avec ❤️ et beaucoup de Capybaras 🌿</p>
+        </div>
+    </footer>
+    <a href="#accueil" class="back-to-top" aria-label="Remonter">↑</a>
+    <script src="script.js"></script>
 </body>
 </html>

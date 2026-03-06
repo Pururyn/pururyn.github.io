@@ -269,7 +269,7 @@ nav a {
         bottom: 0;
         width: 60px;
         z-index: 1;
-        background-image: url('Images/plante-tige.png'), url('Images/plante-tige2.png');
+        background-image: url('Images/Website_DA/plante-tige.png'), url('Images/Website_DA/plante-tige2.png');
         background-repeat: repeat-y;
         background-size: contain;
     }
