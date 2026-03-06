@@ -118,7 +118,7 @@ langBtn.addEventListener('click', () => {
     const newLang = currentLang === 'fr' ? 'en' : 'fr';
 
     // Mise à jour de l'icône (Assure-toi d'avoir flag-en.png et flag-fr.png)
-    langFlag.src = newLang === 'fr' ? 'Images/French.png' : 'Images/English.png';
+    langFlag.src = newLang === 'fr' ? 'Images/Languages/French.png' : 'Images/Languages/English.png';
     langBtn.setAttribute('data-lang', newLang);
 
     // Traduction des éléments (Ajoute les IDs correspondants dans ton HTML)
@@ -136,3 +136,33 @@ langBtn.addEventListener('click', () => {
     document.querySelector('.contact-card h2').textContent = translations[newLang].contactTitle;
     document.querySelector('.contact-card p').textContent = translations[newLang].contactDesc;
 });
+
+//Mes PRojets
+
+function startProjectSlideshows() {
+    // On récupère tous les placeholders de projets
+    const placeholders = document.querySelectorAll('.project-placeholder');
+
+    placeholders.forEach(container => {
+        const images = container.querySelectorAll('img');
+
+        // On ne lance le cycle que s'il y a plus d'une image
+        if (images.length > 1) {
+            let currentIndex = 0;
+
+            setInterval(() => {
+                // Retire la classe active de l'image actuelle
+                images[currentIndex].classList.remove('active');
+
+                // Passe à l'image suivante (et revient à 0 à la fin)
+                currentIndex = (currentIndex + 1) % images.length;
+
+                // Ajoute la classe active à la nouvelle image
+                images[currentIndex].classList.add('active');
+            }, 3000); // Change toutes les 3 secondes
+        }
+    });
+}
+
+// Lancer la fonction au chargement du script
+startProjectSlideshows();
