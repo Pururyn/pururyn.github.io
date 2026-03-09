@@ -174,7 +174,19 @@ nav a {
 }
 
 /* --- AJUSTEMENTS SPÉCIFIQUES --- */
-
+    #qui-suis-je .bio-text {
+        max-width: 900px; /* On élargit l'encadré (ton tracé noir) */
+        margin: 0 auto; /* On le recentre */
+        font-size: 1.2rem; /* On agrandit légèrement le texte (1.2rem = env 19px) */
+        line-height: 1.8; /* On donne de l'air entre les lignes */
+        text-align: center; /* On garde l'alignement centré que tu as choisi */
+        padding: 20px;
+    }
+        /* On ajuste aussi la ligne de la stack technique pour qu'elle suive */
+        #qui-suis-je .bio-text p:last-of-type {
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
 /* Pour la Bio : on limite la largeur pour que ce soit lisible */
 .bio-text {
     max-width: 700px;
@@ -570,5 +582,12 @@ footer {
         width: 45px;
         height: 45px;
         line-height: 45px;
+    }
+    [data-i18n="bio_text"] {
+        text-align: center;
+        line-height: 1.6;
+        font-size: 1rem; /* On garde la taille qui te plaisait sur tel */
+        width: 90%; /* On laisse un peu de marge sur les côtés */
+        margin: 0 auto;
     }
 }

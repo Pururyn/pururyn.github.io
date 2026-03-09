@@ -77,7 +77,9 @@ const translations = {
         hero_welcome: "Bienvenue sur mon portfolio, prenez un café/thé et bonne visite ! ☕",
         hero_tagline: "Développeuse de jeux vidéo & amoureuse des capybaras.💕",
         bio_title: "Qui suis-je ?",
-        bio_text: "Passionnée par la création d'univers, je développe des jeux qui allient mécanique solide et ambiance relaxante...",
+        // On remplace \n\n par <br><br> pour l'interprétation HTML
+        bio_text: "Étudiante au Gaming Campus, je suis passionnée par l'univers du jeu vidéo (et surtout par les capybaras !).<br><br>Très ouverte d’esprit et curieuse de nature, j’aime découvrir de nouvelles expériences et explorer le fonctionnement des mécaniques de jeu.<br><br>Mon objectif est d’intégrer un studio afin de mettre à profit mes compétences et de contribuer à des projets ambitieux qui donnent le sourire aux joueurs !",
+        stack_title: "Stack technique :",
         btn_human: "🤹 CV Version Humain", btn_ats: "🤖 CV Version ATS",
         projects_title: "Mes Projets",
         desc_cyber: "Un Shoot-em Up dans un environnement cyberpunk à l'occasion d'une exposition au musée Malartre.",
@@ -86,6 +88,8 @@ const translations = {
         btn_more_itch: "Voir + de projets",
         contact_title: "Mon profil vous plaît? Contactez-moi !",
         contact_desc: "Veuillez sélectionner le moyen de contact souhaité, à très vite! ☺️",
+        btn_email: "Mon E-mail",
+        btn_linkedin: "Mon LinkedIn",
         footer_text: "© 2026 Jacqueline | Fait avec ❤️ et beaucoup de Capybaras 🌿"
     },
     en: {
@@ -93,7 +97,8 @@ const translations = {
         hero_welcome: "Welcome to my portfolio, grab a coffee/tea and enjoy your visit! ☕",
         hero_tagline: "Game Developer & Capybara lover.💕",
         bio_title: "Who am I?",
-        bio_text: "Passionate about world-building, I develop games that combine solid mechanics with a relaxing atmosphere...",
+        bio_text: "A student at Gaming Campus, I am passionate about the world of video games (and especially capybaras!).<br><br>Open-minded and naturally curious, I love discovering new experiences and exploring how game mechanics work.<br><br>My goal is to join a studio to put my skills to use and contribute to ambitious projects that bring a smile to players' faces!",
+        stack_title: "Technical Stack:",
         btn_human: "🤹 Human Version CV", btn_ats: "🤖 ATS Version CV",
         projects_title: "My Projects",
         desc_cyber: "A Shoot-em Up in a cyberpunk environment created for an exhibition at the Malartre Museum.",
@@ -102,6 +107,8 @@ const translations = {
         btn_more_itch: "More projects",
         contact_title: "Like my profile? Let's talk!",
         contact_desc: "Please select your preferred contact method, see you soon! ☺️",
+        btn_email: "My E-mail",
+        btn_linkedin: "My LinkedIn",
         footer_text: "© 2026 Jacqueline | Made with ❤️ and lots of Capybaras 🌿"
     }
 };
@@ -119,11 +126,17 @@ langBtn.addEventListener('click', () => {
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[newLang][key]) {
-            // Si l'élément contient une image (icône), on préserve l'icône
             const icon = element.querySelector('.btn-icon');
-            if (icon) {
+
+            // LOGIQUE DE MISE À JOUR :
+            if (key === "bio_text") {
+                // Pour la bio, on utilise innerHTML pour activer les <br>
+                element.innerHTML = translations[newLang][key];
+            } else if (icon) {
+                // Pour les boutons avec icônes
                 element.innerHTML = icon.outerHTML + " " + translations[newLang][key];
             } else {
+                // Pour le texte simple (titres, nav)
                 element.textContent = translations[newLang][key];
             }
         }
