@@ -84,7 +84,7 @@ const translations = {
         projects_title: "Mes Projets",
         desc_cyber: "Un Shoot-em Up dans un environnement cyberpunk à l'occasion d'une exposition au musée Malartre.",
         desc_whiskers: "Un platformer en co-op où le joueur voyagera dans le temps où collaboration est requise.",
-        title_testeur: "Testeur", desc_testeur: "Test de l'affichage du 3eme jeu",
+        desc_testeur: "Un lot de 3 mini-jeux mettant en avant des physiques différentes :<br>- Marble Maze<br>- Claw Machine<br>- Destruct Boxes",
         btn_more_itch: "Voir + de projets",
         contact_title: "Mon profil vous plaît? Contactez-moi !",
         contact_desc: "Veuillez sélectionner le moyen de contact souhaité, à très vite! ☺️",
@@ -103,7 +103,7 @@ const translations = {
         projects_title: "My Projects",
         desc_cyber: "A Shoot-em Up in a cyberpunk environment created for an exhibition at the Malartre Museum.",
         desc_whiskers: "A co-op platformer where players travel through time and collaboration is key.",
-        title_testeur: "Tester", desc_testeur: "Testing the 3rd game display",
+        desc_testeur: "A set of 3 mini-games showcasing different physics:<br>- Marble Maze<br>- Claw Machine<br>- Destruct Boxes",
         btn_more_itch: "More projects",
         contact_title: "Like my profile? Let's talk!",
         contact_desc: "Please select your preferred contact method, see you soon! ☺️",
@@ -129,7 +129,7 @@ langBtn.addEventListener('click', () => {
             const icon = element.querySelector('.btn-icon');
 
             // LOGIQUE DE MISE À JOUR :
-            if (key === "bio_text") {
+            if (key === "bio_text" || key === "desc_testeur") {
                 // Pour la bio, on utilise innerHTML pour activer les <br>
                 element.innerHTML = translations[newLang][key];
             } else if (icon) {
